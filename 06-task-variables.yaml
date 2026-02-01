@@ -5,13 +5,14 @@
     name: Pavan
     age: 24
   tasks:
+  
   - name: task variables
     vars:
       name: nagendra
       age: 24
     ansible.builtin.debug:
       msg: "hello {{ name }} and age is :{{ age }}"
-  tasks:
+      
   - name: global variables
     ansible.builtin.debug:
       msg: "hello {{ name }} and age is :{{ age }}"   
