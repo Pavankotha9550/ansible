@@ -1,0 +1,7 @@
+- name: by commandline
+  hosts: local
+  connection: local
+  tasks:
+  - name: getting by commandline
+    ansible.builtin.debug:
+      msg: "hello{{name}} and age was {{age}}"
