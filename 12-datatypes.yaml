@@ -13,4 +13,4 @@
   tasks:
   - name: printing these
     ansible.builtin.debug:
-    msg: "{{name}} {{age}}"
+      msg: "{{name}} {{age}}"
