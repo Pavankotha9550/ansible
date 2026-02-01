@@ -1,0 +1,7 @@
+- name: to frontend
+  hosts: frontend
+  tasks:
+  - name: getting from inventory
+    ansible.builtin.debug:
+      msg: "hello {{name}} and age {{age}}"
+      
