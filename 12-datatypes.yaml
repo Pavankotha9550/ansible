@@ -1,6 +1,6 @@
 - name: data types in ansible
   hosts: local
-  connestion: local
+  connection: local
   vars:
     name: Pavan
     age: 24
