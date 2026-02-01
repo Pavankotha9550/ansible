@@ -3,11 +3,11 @@
   connection: local
   vars_prompt:
   - name: username
-    promt: "enter user name:"
+    prompt: "enter user name:"
     private: false
 
   - name: password
-    promt: password
+    prompt: password
     private: true
   
   tasks:
