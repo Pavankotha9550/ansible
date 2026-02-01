@@ -1,5 +1,6 @@
 - name: variables
   hosts: local
+  connections: local
   vars:
     name: Pavan
     age: 24
