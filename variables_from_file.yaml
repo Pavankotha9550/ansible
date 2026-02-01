@@ -1,0 +1,9 @@
+- name: variables from file
+  hosts: local
+  connection: local
+  vars_file:
+    varfile.yaml
+  tasks:
+  - name: printing from other file
+    ansible.builtin.debug:
+      msg: "hello {{ name }} and age was {{ age }}"
