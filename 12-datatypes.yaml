@@ -1,0 +1,16 @@
+- name: data types in ansible
+  hosts: local
+  condition: local
+  vars:
+    name: Pavan
+    age: 24
+  concept: #list
+  - nagendra
+  - 25
+  tools: #map
+    name: sai
+    type: "dictonary or obj or map"
+  tasks:
+  - name: printing these
+    ansible.builtin,debug:
+    msg: "{{name}} {{age}}"
