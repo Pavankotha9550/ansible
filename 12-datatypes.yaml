@@ -4,12 +4,12 @@
   vars:
     name: Pavan
     age: 24
-  concept: #list
-  - nagendra
-  - 25
-  tools: #map
-    name: sai
-    type: "dictonary,or,obj,or,map"
+    concept: #list
+    - nagendra
+    - 25
+    tools: #map
+      name: sai
+      type: "dictonary,or,obj,or,map"
   tasks:
   - name: printing these
     ansible.builtin.debug:
