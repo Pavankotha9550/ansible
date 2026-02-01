@@ -1,0 +1,16 @@
+- name: user define
+  hosts: local
+  connection: local
+  vars_promt:
+  - name: username
+    promt: "enter user name:"
+    private: false
+
+  - name: password
+    promt: password
+    private: true
+  
+  tasks:
+  - name: checking prompts
+    ansible.builtin.debug:
+      msg: "user name:{{ username }} and password{{ password }}"
