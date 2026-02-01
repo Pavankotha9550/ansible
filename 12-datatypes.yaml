@@ -9,8 +9,8 @@
     - 25
     tools: #map
       name: sai
-      type: "dictonary,or,obj,or,map"
+      type: "dictonary or obj or map"
   tasks:
   - name: printing these
     ansible.builtin.debug:
-      msg: "{{name}} {{age}}"
+      msg: "{{name}} {{age}} {{concept}} {{tools}}"
