@@ -1,0 +1,9 @@
+- name: controling by ansible facts
+  hosts: frontend
+  become: yes
+  tasks:
+    - name: nginx if redhat
+      ansible.builtin.define:
+        name: nginx
+        state: present
+      when: ansible_os_family=="RedHat"
