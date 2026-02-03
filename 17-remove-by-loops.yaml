@@ -1,0 +1,12 @@
+- name: remove by loops
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: by loops
+    ansible.builtin.package:
+      name:
+      state:
+    loop:
+    - {name: 'nginx', state: 'present'}
+    - {name: 'mysql', state: 'absent'}
+    - {name: 'zip', state: 'absent'}
