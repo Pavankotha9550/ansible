@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: nginx if redhat
-    ansible.builtin.define:
+    ansible.builtin.dnf:
       name: nginx
       state: present
     when: ansible_os_family=="RedHat"
