@@ -1,8 +1,8 @@
 - name: configuration of mysql
   hosts: mysql
   become: yes
-  vars_files:
-    - vault/main.yaml
+  #vars_files:
+    #- vault/main.yaml
   tasks:
     - name: installing mysql server
       ansible.builtin.package:
