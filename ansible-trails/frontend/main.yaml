@@ -5,6 +5,6 @@
   - name: nginx setup
     tags:
     - nginx
-    import_role:
+    include_role:
       name: common
       tasks_from: nginx_setup
