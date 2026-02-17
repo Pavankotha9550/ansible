@@ -1,0 +1,6 @@
+- name: nginx setup
+  tags:
+   - nginx
+  include_role:
+    name: common
+    tasks_from: nginx_setup
