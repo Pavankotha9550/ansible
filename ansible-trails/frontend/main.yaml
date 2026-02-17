@@ -1,6 +1,10 @@
-- name: nginx setup
-  tags:
-   - nginx
-  import_role:
-    name: common
-    tasks_from: nginx_setup
+- name: configuration of mysql
+  hosts: mysql
+  become: yes
+  tasks:
+  - name: nginx setup
+    tags:
+    - nginx
+    import_role:
+      name: common
+      tasks_from: nginx_setup
