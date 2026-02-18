@@ -1,7 +1,7 @@
 plugin: amazon.aws.aws_ec2
 region: us-east-1
 keyed_groups:
-  - key: tags.Name
+  - key: tags.Environment
     prefix: "dynamic"
     seperator: "-"
 filters:
@@ -13,3 +13,5 @@ hostnames:
 compose:
   # This sets the `ansible_host` variable to connect with the private IP address without changing the hostname. telling ansible by ssh which ip we need to connect
   ansible_host: private_ip_address
+  tags:
+      Environment: frontend
