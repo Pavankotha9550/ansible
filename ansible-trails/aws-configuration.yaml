@@ -9,6 +9,7 @@
     subnet: "subnet-06631d9dd130f6ebc"
     sg: "sg-0ccfe8392d60403ed"
     image: "ami-0220d79f3f480ecf5"
+    zone: "daws84.cyou"
 
   tasks:
     - name: creating instances
@@ -22,4 +23,29 @@
           Environment: "{{item}}"
       loop: "{{instances}}"
       register: ec2_output
+
+    - name: creating route53
+      amazon.aws.route53:
+        state: present
+        zone: "{{zone}}"
+        record: "{{item.item}}.{{zone}}"
+        type: A
+        ttl: 1
+        value: "{{item.instance[0].private_ip_address}}"
+        wait: true
+        overwrite: true
+      loop: "{{ec2_output.result}}"
+
+    - name: creating route53 for frontend
+      amazon.aws.route53:
+        state: present
+        zone: "{{zone}}"
+        record: "{{item.item}}.{{zone}}"
+        type: A
+        ttl: 1
+        value: "{{item.instance[0].private_ip_address}}"
+        wait: true
+        overwrite: true
+      loop: "{{ec2_output.result}}"
+      when: item.item == "frontend"
 
