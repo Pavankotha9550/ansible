@@ -38,7 +38,7 @@
         value: "{{item.instance[0].private_ip_address}}"
         wait: true
         overwrite: true
-      loop: "{{ec2_output.result}}"
+      loop: "{{ec2_output.results}}"
 
 
     - name: creating route53 for frontend
