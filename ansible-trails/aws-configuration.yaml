@@ -24,6 +24,10 @@
       loop: "{{instances}}"
       register: ec2_output
 
+    - name: printing output
+      ansible.builtin.debug:
+        msg: "{{ec2_output}}"
+
     - name: creating route53
       amazon.aws.route53:
         state: present
@@ -36,6 +40,7 @@
         overwrite: true
       loop: "{{ec2_output.result}}"
 
+
     - name: creating route53 for frontend
       amazon.aws.route53:
         state: present
@@ -46,6 +51,6 @@
         value: "{{item.instance[0].private_ip_address}}"
         wait: true
         overwrite: true
-      loop: "{{ec2_output.result}}"
+      loop: "{{ec2_output.results}}"
       when: item.item == "frontend"
 
