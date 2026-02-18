@@ -20,6 +20,6 @@
       image_id: "{{image}}"
       tags:
         Environment: "{{item}}"
-      loop: {{instances}}
+      loop: "{{instances}}"
       register: ec2-output
 
