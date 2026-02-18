@@ -11,15 +11,15 @@
     image: "ami-0220d79f3f480ecf5"
 
   tasks:
-    - name: creating ec2-instances
+    - name: creating instances
       amazon.aws.ec2_instance:
-      name: "{{item}}"
-      vpc_subnet_id: "{{subnet}}"
-      instance_type: t3.micro
-      security_group: "{{sg}}"
-      image_id: "{{image}}"
-      tags:
-        Environment: "{{item}}"
+        name: "{{item}}"
+        vpc_subnet_id: "{{subnet}}"
+        instance_type: t3.micro
+        security_group: "{{sg}}"
+        image_id: "{{image}}"
+        tags:
+          Environment: "{{item}}"
       loop: "{{instances}}"
       register: ec2-output
 
